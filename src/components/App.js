@@ -22,9 +22,9 @@ class App extends React.Component {
     }));
   };
 
-  isContactinPhonebook = name => {
+  isContactinPhonebook = name => 
 this.state.contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())
-  };
+  ;
 
   onDeleteContact = event => {
     this.setState(prevState => ({
