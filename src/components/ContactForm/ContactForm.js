@@ -16,11 +16,6 @@ class ContactForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.props.onCheckContact(this.state.name)) {
-      alert(`${this.state.name} is already in phonebook`);
-      return;
-    }
-
     this.props.onSubmit(this.state);
     this.reset();
   };

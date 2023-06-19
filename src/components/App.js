@@ -17,6 +17,12 @@ class App extends React.Component {
   };
 
   onAddContact = contact => {
+    const contacts = this.state.contacts.map(oneContact => oneContact.name.toLowerCase());
+
+    if (contacts.includes(contact.name.toLowerCase())) {
+      alert(`${contact.name} is already in phonebook`);
+      return;
+    }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, { id: shortid.generate(), ...contact }],
     }));
